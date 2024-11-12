@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Prawns - Online Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Fresh Prawns</h1>
+            <p>Direct from Farmers to Your Doorstep</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Prawns</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="login.html">Login</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="about-section">
+        <h2>About Fresh Prawns</h2>
+        <p>
+            Prawns are one of the most popular seafood options worldwide. Not only do they offer a delightful taste, but they also have numerous health benefits. Packed with high-quality protein, vitamins, and minerals, prawns are an excellent choice for those looking to maintain a healthy lifestyle. Our prawns are sourced directly from local farmers and delivered fresh to your doorstep.
+        </p>
+        <h3>Types of Prawns We Offer</h3>
+        <ul>
+            <li>King Prawns</li>
+            <li>Tiger Prawns</li>
+            <li>White Prawns</li>
+            <li>Black Tiger Prawns</li>
+        </ul>
+    </section>
+
+    <section id="products" class="product-section">
+        <h2>Our Fresh Products</h2>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="prawn1.jpg" alt="Fresh King Prawns" />
+                <h3>Fresh King Prawns</h3>
+                <p>500/kg</p>
+                <button onclick="addToCart('Fresh King Prawns',500)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="prawn2.jpg" alt="Tiger Prawns" />
+                <h3>Tiger Prawns</h3>
+                <p>600/kg</p>
+                <button onclick="addToCart('Tiger Prawns', 600)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="prawn3.jpg" alt="White Prawns" />
+                <h3>White Prawns</h3>
+                <p>450/kg</p>
+                <button onclick="addToCart('White Prawns', 450)">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="cart-section">
+        <h2>Your Cart</h2>
+        <div id="cart-items">
+            <p>Your cart is empty!</p>
+        </div>
+        <button onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </section>
+
+    <section id="checkout" class="checkout-section" style="display:none;">
+        <h2>Checkout</h2>
+        <form id="checkout-form" onsubmit="completeCheckout(event)">
+            <div class="form-group">
+                <label for="quantity">Product Quantity (kg):</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Shipping Address:</label>
+                <textarea id="address" name="address" required></textarea>
+            </div>
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <section id="order-status" class="order-status-section" style="display:none;">
+        <h2>Order Confirmation</h2>
+        <p>Your order has been placed successfully! You will receive a confirmation email with the order details.</p>
+        <button onclick="window.location.href='index.html'">Back to Home</button>
+    </section>
+
+    <footer id="contact">
+        <p>Contact Us: support@freshprawns.com</p>
+        <p>Follow us on social media</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

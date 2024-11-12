@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Sign Up - Fresh Prawns</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Fresh Prawns</h1>
+            <p>Direct from Farmers to Your Doorstep</p>
+        </div>
+    </header>
+
+    <section id="auth" class="form-section">
+        <h2 id="auth-title">Login</h2>
+
+        <!-- Login Form -->
+        <form id="login-form" action="connect.php" method="POST">
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Sign Up Form (optional, toggled via JavaScript) -->
+        <form id="signup-form" action="connect.php" method="POST" style="display: none;">
+            <div class="form-group">
+                <label for="signup-name">Full Name</label>
+                <input type="text" id="signup-name" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <p id="toggle-link">
+            Don't have an account? <a href="#" onclick="toggleForms('signup')">Sign Up</a> | Already have an account? <a href="#" onclick="toggleForms('login')">Login</a>
+        </p>
+    </section>
+
+    <footer id="contact">
+        <p>Contact Us: support@freshprawns.com</p>
+        <p>Follow us on social media</p>
+    </footer>
+
+    <script>
+        // Function to toggle between Login and Sign Up forms
+        function toggleForms(formType) {
+            if (formType === 'signup') {
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('signup-form').style.display = 'block';
+                document.getElementById('auth-title').textContent = 'Sign Up';
+            } else {
+                document.getElementById('login-form').style.display = 'block';
+                document.getElementById('signup-form').style.display = 'none';
+                document.getElementById('auth-title').textContent = 'Login';
+            }
+        }
+    </script>
+</body>
+</html>
